@@ -10,8 +10,13 @@ export class ProductListComponent implements OnInit {
 
 
   constructor(public productsService:ProductsService) { }
-  public products:Array<Product> = this.productsService.products;
+  
+  public get getProducts() : Array<Product> {
+    return this.productsService.products;
+  }
+  
   ngOnInit(): void {
+    // this.productsService.getProducts();
   }
 
 }
