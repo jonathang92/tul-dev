@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Shoping Cart</h1>
+    <h1 *ngIf="cart.length == 0" class="text-center mt-5 text-muted">No Items in cart :(</h1>
+    <div class="row">
+        <app-product-card *ngFor="let product of cart" [product]=product class="col-sm-12" [cart]="true"></app-product-card>
+    </div>
+    <div *ngIf="cart.length != 0" class="my-3">
+        <button type="button" class="btn btn-outline-dark me-3"><i class="bi bi-check-all"></i> Create Order</button>
+        <button type="button" class="btn btn-outline-dark" (click)="deleteCart()"> <i class="bi bi-x"></i> Delete Cart</button>
+    </div>
+</div>

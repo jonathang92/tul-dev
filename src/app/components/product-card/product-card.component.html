@@ -1,0 +1,21 @@
+<div class="card mt-3">
+    <div class="card-body">
+        <h4 class="card-title">{{ product.name }}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{ product.sku }}</h6>
+        <p class="card-text">{{ product.description }}</p>
+        <div class="d-flex">
+            <p *ngIf="cart" class="m-0 py-2 px-3">{{ quantity }}</p>
+            <input *ngIf="!cart" [(ngModel)]="quantity" (change)="adjustLimits()" class="form-control text-center me-3" id="inputQuantity" type="number" style="max-width: 3rem">
+            
+            <button class="btn btn-outline-dark flex-shrink-0 me-1" type="button" (click)="add()"> + </button>
+            <button class="btn btn-outline-dark flex-shrink-0 me-1" type="button" (click)="substract()"> - </button>
+            <button *ngIf="!cart" class="btn btn-outline-dark flex-shrink-0" type="button" (click)="saveToCart()">
+                <i class="bi bi-cart-plus-fill"></i>
+                Add to cart
+            </button>
+            <button *ngIf="cart" class="btn btn-outline-dark flex-shrink-0" type="button" (click)="deleteFromCart()">
+                <i class="bi bi-x"></i> Delete from cart
+            </button>
+        </div>
+    </div>
+</div>
