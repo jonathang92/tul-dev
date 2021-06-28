@@ -8,7 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public cartService:CartService) { }
+  constructor(private cartService:CartService) { }
 
   deleteCart(){
     this.cartService.deleteCart();

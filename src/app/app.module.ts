@@ -8,6 +8,9 @@ import { CartComponent } from './views/cart/cart.component';
 import { LoginComponent } from './views/login/login.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
